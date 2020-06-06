@@ -19,6 +19,10 @@ int main(int argc, char* argv[]) {
     QPushButton button;
     button.setText("Clicked me");
     button.setParent(&w);
+    button.show();
+    // 设置button坐标，基于父对象进行设置
+    button.setGeometry(30, 30, 100, 30);
+
 
     // QT对C++的拓展(信号(事件)->槽(事件对应方法))
     // std::bind -> std::function
