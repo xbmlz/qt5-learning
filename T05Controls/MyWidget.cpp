@@ -39,7 +39,7 @@ MyWidget::MyWidget(QWidget *parent) : QWidget(parent)
     QLCDNumber* lcd;
 
     layout->addWidget(label = new QLabel("<a href=www.baidu.com>Baidu</a>"));
-    // pro文件添加CONFIG += C++
+    // pro文件添加CONFIG += C++11
     connect(label, &QLabel::linkActivated, this, [](QString str) {
         qDebug() << str;
     });
