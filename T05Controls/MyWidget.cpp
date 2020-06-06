@@ -19,7 +19,7 @@
 
 #include <QVBoxLayout>  // 垂直布局
 #include <QHBoxLayout>  // 水平布局
-#include <QCompleter>
+#include <QCompleter>   // 提示
 
 #include <QDebug>
 
@@ -66,7 +66,6 @@ MyWidget::MyWidget(QWidget *parent) : QWidget(parent)
     layout->addWidget(new QDateTimeEdit);
     layout->addWidget(group = new QGroupBox("Some Items"));
     layout->addWidget(lcd = new QLCDNumber(10));
-
 
     // lcd number
     lcd->display(12345);
