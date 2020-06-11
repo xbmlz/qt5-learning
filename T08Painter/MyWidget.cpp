@@ -1,6 +1,7 @@
 #include "MyWidget.h"
 #include <QApplication>
 #include <QPainter>
+#include <QMouseEvent>
 
 MyWidget::MyWidget(QWidget *parent) : QWidget(parent)
 {
@@ -35,6 +36,17 @@ void MyWidget::paintEvent(QPaintEvent *event)
     p.end();
     p.begin(this);
     p.drawPixmap(0, 0, pixmap);
+}
+
+void MyWidget::mousePressEvent(QMouseEvent *event)
+{
+    if (event->button() == Qt::RightButton)
+    {
+        QPixmap pixmap(size());
+        QPainter painter(&pixmap);
+        render(&painter);
+        pixmap.save("./temp.png");
+    }
 }
 
 int main(int args, char* argv[])

@@ -10,6 +10,8 @@ public:
     explicit MyWidget(QWidget *parent = 0);
 
     void paintEvent(QPaintEvent *event);
+
+    void mousePressEvent(QMouseEvent *event);
 signals:
 
 public slots:
