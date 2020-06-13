@@ -15,6 +15,8 @@
 #include <QPrintPreviewDialog>  // 打印预览
 #include <QPrintDialog>         // 打印
 
+#include <QTimer>
+
 class MyWidget : public QWidget
 {
     Q_OBJECT
@@ -31,10 +33,14 @@ public:
 
     QGraphicsView* _view;   // show th data model
 
+    QTimer* _timer;
+
 signals:
 
 public slots:
     void slotPaintRequested(QPrinter*);
+
+    void slotTimeout();
 };
 
 #endif // MYWIDGET_H

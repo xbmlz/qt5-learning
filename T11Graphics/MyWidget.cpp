@@ -68,7 +68,20 @@ void MyWidget::mousePressEvent(QMouseEvent *event)
 //        dialog.exec();
     }
 
+    // 定时器
+    _timer = new QTimer();
+    _timer->setInterval(1000); //每多少毫秒执行一次
+    connect(_timer, SIGNAL(timeout()), this, SLOT(slotTimeout()));
 
+    _timer->start();
+
+    // 只执行一次
+    QTimer::singleShot(1000, this, SLOT(slotTimeout()));
+}
+
+void MyWidget::slotTimeout()
+{
+    qDebug() << "Timeout";
 }
 
 void MyWidget::slotPaintRequested(QPrinter *printer)
