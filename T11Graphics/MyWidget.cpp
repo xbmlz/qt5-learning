@@ -73,7 +73,7 @@ void MyWidget::mousePressEvent(QMouseEvent *event)
     _timer->setInterval(1000); //每多少毫秒执行一次
     connect(_timer, SIGNAL(timeout()), this, SLOT(slotTimeout()));
 
-    _timer->start();
+    // _timer->start();
 
     // 只执行一次
     QTimer::singleShot(1000, this, SLOT(slotTimeout()));
