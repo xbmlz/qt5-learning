@@ -9,6 +9,8 @@ class MyDialog : public QDialog
 public:
     explicit MyDialog(QWidget *parent = 0);
 
+    QString _strDir;
+
 signals:
 
 public slots:
